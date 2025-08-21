@@ -1,0 +1,21 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://tiemani-sinak.com/sitemap.xml
+
+# Disallow crawling of admin and other sensitive areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /includes/
+Disallow: /config/
+
+# Allow all robots to index the main pages
+Allow: /$
+Allow: /#about$
+Allow: /#services$
+Allow: /#portfolio$
+Allow: /#contact$
+
+# Crawl-delay: 10  # Uncomment and adjust if needed to limit crawl rate

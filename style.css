@@ -199,6 +199,51 @@ img.lazyloaded {
     opacity: 1;
 }
 
+/* ----------ACCESSIBILITY IMPROVEMENTS------------ */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #2600ff;
+    color: white;
+    padding: 8px 16px;
+    z-index: 100;
+    transition: top 0.3s;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Focus styles for better keyboard navigation */
+:focus-visible {
+    outline: 3px solid #2600ff;
+    outline-offset: 2px;
+}
+
+/* Tab styles for better accessibility */
+.tab-links {
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 500;
+    color: #ababab;
+    cursor: pointer;
+    padding: 10px 20px;
+    position: relative;
+    margin-right: 10px;
+}
+
+.tab-links[aria-selected="true"] {
+    color: #2600ff;
+}
+
+.tab-links:focus-visible {
+    outline: 3px solid #2600ff;
+    outline-offset: 2px;
+}
+
 /*------------------services-----------------*/
 #services{
     padding: 30px 0;

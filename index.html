@@ -4,21 +4,77 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tiemani Sinak Augusto - Computer Science Engineering Student and Web Developer from Cameroon">
-    <meta name="keywords" content="web developer, programmer, computer science, Cameroon, portfolio">
+    <!-- Primary Meta Tags -->
+    <title>Tiemani Sinak Augusto | Network Security Specialist & Cloud Computing Student</title>
+    <meta name="title" content="Tiemani Sinak Augusto | Network Security Specialist & Cloud Computing Student">
+    <meta name="description" content="Network Security Technician / Junior Security Analyst and a passionate Computer Science student with expertise in cloud computing, cybersecurity, and full-stack web development.">
+    <meta name="keywords" content="network security, cloud computing, cybersecurity, web developer, full-stack developer, Cameroon, portfolio, MERN stack, AWS, JWT, authentication, RBAC">
     <meta name="author" content="Tiemani Sinak Augusto">
+    <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#2600ff">
-    <title>Tiemani Sinak Augusto</title>
-    <link rel="canonical" href="https://yourdomain.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://tiemani-sinak.com">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tiemani-sinak.com/">
+    <meta property="og:title" content="Tiemani Sinak Augusto | Network Security Specialist & Cloud Computing Student">
+    <meta property="og:description" content="Network Security Technician / Junior Security Analyst and a passionate Computer Science student with expertise in cloud computing and cybersecurity.">
+    <meta property="og:image" content="https://tiemani-sinak.com/logo-and-imgs/img/pic1.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://tiemani-sinak.com/">
+    <meta property="twitter:title" content="Tiemani Sinak Augusto | Network Security Specialist & Cloud Computing Student">
+    <meta property="twitter:description" content="Network Security Technician / Junior Security Analyst and a passionate Computer Science student with expertise in cloud computing and cybersecurity.">
+    <meta property="twitter:image" content="https://tiemani-sinak.com/logo-and-imgs/img/pic1.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo-and-imgs/img/favicon.png">
+    <link rel="apple-touch-icon" href="logo-and-imgs/img/apple-touch-icon.png">
+    
+    <!-- Sitemap -->
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.min.css" media="print" onload="this.media='all'; this.onload=null;">
-    <noscript><link rel="stylesheet" href="css/style.min.css"></noscript>
-    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'; this.onload=null;">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
+    <!-- Font Awesome with preconnect -->
+    <link rel="preconnect" href="https://kit.fontawesome.com">
+    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous" defer></script>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Tiemani Sinak Augusto",
+      "url": "https://tiemani-sinak.com",
+      "sameAs": [
+        "https://linkedin.com/in/tiemani-sinak",
+        "https://github.com/tiemani-sinak",
+        "https://twitter.com/tiemani_sinak"
+      ],
+      "jobTitle": "Network Security Technician / Junior Security Analyst",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Freelance"
+      },
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Institut Universitaire de la Côte (IUC), Douala"
+      },
+      "description": "Network Security Technician / Junior Security Analyst and a passionate Computer Science student with expertise in cloud computing, cybersecurity, and full-stack web development."
+    }
+    </script>
 </head>
 <body>
-    <header id="header" role="banner">
+    <!-- Skip to main content link for keyboard users -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header id="header" role="banner" aria-label="Main Header">
         <div class="container" role="main">
             <nav>
                 <img src="Logo-and-imgs/Img/mylogo.png" class="logo" width="140" height="40" alt="Tiemani Sinak Augusto Logo" loading="lazy">
@@ -32,7 +88,7 @@
                 </ul>
                 <i class="fas fa-bars" onclick="openmenu()"></i>
             </nav>
-            <div class="header-text">
+            <div class="header-text" id="main-content" tabindex="-1">
                 <h1>Hi I'm <span>Tiemani Sinak <br> Augusto </span> From Cameroon</h1>
                 <p>Network Security Technician / Junior Security Analyst
                     and a passionate Computer Science student with a strong interest in cloud computing, cybersecurity, 
@@ -52,11 +108,11 @@
                     <p>A motivated network engineering student with strong skills in computer programming, networking, and troubleshooting. Passionate about technology and eager to enhance
                          my skills, capabilities, and knowledge in an organization that recognizes the value of hard work and trusts me with responsibilities and challenges.</p>
                     <div class="tab-titles">
-                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
-                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                        <button class="tab-links active-link" id="skills-tab" role="tab" aria-selected="true" aria-controls="skills" onclick="opentab('skills', event)">Skills</button>
+                        <button class="tab-links" id="experience-tab" role="tab" aria-selected="false" aria-controls="experience" onclick="opentab('experience', event)">Experience</button>
+                        <button class="tab-links" id="education-tab" role="tab" aria-selected="false" aria-controls="education" onclick="opentab('education', event)">Education</button>
                     </div>
-                    <div class="tab-contents active-tab" id="skills">
+                    <div class="tab-contents active-tab" id="skills" role="tabpanel" aria-labelledby="skills-tab">
                         <ul>
                             <li><span>Programming</span><br>Creating programs that help solve problems.</li>
                             <li><span>Web Development</span><br>Front-end and back-end development</li>
@@ -64,7 +120,7 @@
                             <li><span>Network Security</span><br>Security protocols and best practices</li>
                         </ul>
                     </div>
-                    <div class="tab-contents" id="experience">
+                    <div class="tab-contents" id="experience" role="tabpanel" aria-labelledby="experience-tab" hidden>
                         <ul>
                             <li><span>10/2023 - 08/2024</span><br><b>Network Intern</b> at Duvaal International School<br>
                             - Managed and maintained network equipment to ensure smooth connectivity<br>
@@ -75,7 +131,7 @@
                             <li><span>2015-2022</span><br><b>Student</b> at GBHS Bojongo-Douala</li>
                         </ul>
                     </div>
-                    <div class="tab-contents" id="education">
+                    <div class="tab-contents" id="education" role="tabpanel" aria-labelledby="education-tab" hidden>
                         <ul>
                             <li><span>2024-2025</span><br><b>Bachelor of Technology</b> in Cloud Computing<br>Institut Universitaire de la Côte (IUC), Douala</li>
                             <li><span>2022-2024</span><br><b>HND in Network and Security</b><br>Institut Universitaire de la Côte (IUC), Douala</li>
@@ -180,7 +236,9 @@
                         <a href="https://www.linkedin.com/in/augusto-tiemani-sinak-4a5588227/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                         <a href="https://github.com/Tiemani" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
                     </div>
-                    <a href="#" class="btn btn2">Download CV</a>
+<a href="https://drive.google.com/uc?export=download&id=19VV2wevFpw0Kqir0JwD3i8Oy_i9RmEAG" class="btn btn2" download>
+    <i class="fas fa-download"></i> Download CV
+</a>
                 </div>
             </div>
         </div>
@@ -195,72 +253,146 @@
         </div>
     </footer>
     <script>
-        var tablinks = document.getElementsByClassName("tab-links");
-        var tabcontents = document.getElementsByClassName("tab-contents");
-
-        function opentab(tabname){
-            for(tablink of tablinks){
-                tablink.classList.remove("active-link");
-            } 
-            for(tabcontent of tabcontents){
-                tabcontent.classList.remove("active-tab");
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle accessible tabs
+            const tabLinks = document.querySelectorAll('.tab-links');
+            const tabPanels = document.querySelectorAll('.tab-contents');
+            
+            function setActiveTab(tabId, event) {
+                if (event) event.preventDefault();
+                
+                // Update tab links
+                tabLinks.forEach(tab => {
+                    const isSelected = tab.getAttribute('aria-controls') === tabId;
+                    tab.setAttribute('aria-selected', isSelected);
+                    tab.classList.toggle('active-link', isSelected);
+                    tab.setAttribute('tabindex', isSelected ? '0' : '-1');
+                });
+                
+                // Update tab panels
+                tabPanels.forEach(panel => {
+                    const isActive = panel.id === tabId;
+                    panel.hidden = !isActive;
+                    panel.setAttribute('aria-hidden', !isActive);
+                    if (isActive) {
+                        panel.removeAttribute('hidden');
+                        // Add a small delay before focusing to ensure the panel is visible
+                        setTimeout(() => panel.focus(), 10);
+                    }
+                });
             }
-            event.currentTarget.classList.add("active-link");
-            document.getElementById(tabname).classList.add("active-tab");
-    }
-    var tablinks = document.getElementsByClassName("tab-links");
-    var tabcontents = document.getElementsByClassName("tab-contents");
-
-    function opentab(tabname){
-        for(tablink of tablinks){
-            tablink.classList.remove("active-link");
-        } 
-        for(tabcontent of tabcontents){
-            tabcontent.classList.remove("active-tab");
+            
+            // Add click event listeners to tabs
+            tabLinks.forEach(tab => {
+                tab.addEventListener('click', function(e) {
+                    const tabId = this.getAttribute('aria-controls');
+                    setActiveTab(tabId, e);
+                });
+                
+                // Keyboard navigation for tabs
+                tab.addEventListener('keydown', function(e) {
+                    const currentTab = this;
+                    const tabList = currentTab.parentElement;
+                    const tabs = Array.from(tabList.querySelectorAll('.tab-links'));
+                    const currentIndex = tabs.indexOf(currentTab);
+                    
+                    let newIndex;
+                    
+                    switch(e.key) {
+                        case 'ArrowLeft':
+                        case 'ArrowUp':
+                            e.preventDefault();
+                            newIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+                            tabs[newIndex].focus();
+                            break;
+                            
+                        case 'ArrowRight':
+                        case 'ArrowDown':
+                            e.preventDefault();
+                            newIndex = (currentIndex + 1) % tabs.length;
+                            tabs[newIndex].focus();
+                            break;
+                            
+                        case 'Home':
+                            e.preventDefault();
+                            tabs[0].focus();
+                            break;
+                            
+                        case 'End':
+                            e.preventDefault();
+                            tabs[tabs.length - 1].focus();
+                            break;
+                            
+                        case 'Enter':
+                        case ' ':
+                            e.preventDefault();
+                            const tabId = this.getAttribute('aria-controls');
+                            setActiveTab(tabId, e);
+                            break;
+                    }
+                });
+            });
+            
+            // Initialize first tab as active
+            if (tabLinks.length > 0) {
+                const firstTabId = tabLinks[0].getAttribute('aria-controls');
+                setActiveTab(firstTabId);
+            }
+            
+            // Mobile menu functionality
+            const sidemenu = document.getElementById('sidemenu');
+            
+            function openMenu() {
+                sidemenu.style.right = '0';
+                // Trap focus when menu is open
+                const firstFocusable = sidemenu.querySelector('a, button, [tabindex="0"]');
+                if (firstFocusable) firstFocusable.focus();
+                document.body.style.overflow = 'hidden';
+            }
+            
+            function closeMenu() {
+                sidemenu.style.right = '-200px';
+                // Return focus to menu button
+                const menuButton = document.querySelector('.fa-bars').parentElement;
+                if (menuButton) menuButton.focus();
+                document.body.style.overflow = '';
+            }
+            
+            // Make menu functions globally available
+            window.openmenu = openMenu;
+            window.closemenu = closeMenu;
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                const menuButton = document.querySelector('.fa-bars');
+                if (sidemenu.style.right === '0px' && 
+                    !sidemenu.contains(e.target) && 
+                    e.target !== menuButton && 
+                    !menuButton.contains(e.target)) {
+                    closeMenu();
+                }
+            });
+            
+            // Close menu when clicking on a menu item
+            document.querySelectorAll('#sidemenu a').forEach(link => {
+                link.addEventListener('click', closeMenu);
+            });
+            
+            // Update current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+        
+        // Global function for tab switching from onclick attributes
+        function opentab(tabId, event) {
+            if (event) event.preventDefault();
+            const tabLink = document.querySelector(`[aria-controls="${tabId}"]`);
+            if (tabLink) tabLink.click();
         }
-        event.currentTarget.classList.add("active-link");
-        document.getElementById(tabname).classList.add("active-tab");
-    }
+    
+    // This function is now handled by the new tab system
+    const tabLink = document.querySelector(`[onclick*="${tabname}"]`);
+    if (tabLink) tabLink.click();
 
-</script>
-
-<script>
-// Current year in footer
-document.getElementById('current-year').textContent = new Date().getFullYear();
-
-// Mobile menu functionality
-const sidemenu = document.getElementById('sidemenu');
-const menuToggle = document.querySelector('.fa-bars');
-
-function openmenu() {
-    sidemenu.style.right = '0';
-    document.body.style.overflow = 'hidden';
-}
-
-function closemenu() {
-    sidemenu.style.right = '-200px';
-    document.body.style.overflow = 'auto';
-}
-
-// Close menu when clicking on a navigation link
-document.querySelectorAll('#sidemenu a').forEach(link => {
-    link.addEventListener('click', closemenu);
-});
-
-// Tab functionality
-const tablinks = document.getElementsByClassName('tab-links');
-const tabcontents = document.getElementsByClassName('tab-contents');
-
-function opentab(tabname) {
-    for (const tablink of tablinks) {
-        tablink.classList.remove('active-link');
-    }
-    for (const tabcontent of tabcontents) {
-        tabcontent.classList.remove('active-tab');
-    }
-    event.currentTarget.classList.add('active-link');
-    document.getElementById(tabname).classList.add('active-tab');
-}
 
 // Scroll to top button
 const scrollToTopBtn = document.getElementById('scrollToTop');
