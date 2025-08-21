@@ -7,7 +7,13 @@
 html{
     scroll-behavior: smooth;
 }
-body{
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Space for fixed header */
+}
+
+body {
     background: #080808;
     color: #fff;
 }
@@ -16,8 +22,13 @@ body{
     height: 100vh;
     background-image: url(Logo-and-imgs/Vehicle_204.webp.jpg);
     background-size: cover;
-    background-position: center;
 }
+
+#header.scrolled {
+    background: rgba(0, 0, 0, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
 .container{
     padding: 10px 10%;
 }
@@ -27,6 +38,7 @@ nav{
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    padding: 15px 0;
 }
 
 .logo{
@@ -66,8 +78,21 @@ nav ul li a:hover::after{
     font-size: 60px;
     margin-top: 20px;
 }
-.header-text h1 span{
-    color: #007bff;
+/* Animated gradient text */
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.header-text h1 span {
+    background: linear-gradient(90deg, #2600ff, #00ff88, #2600ff);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    animation: gradient 3s linear infinite;
 }
 /* --------about---------*/
 #about{
@@ -138,6 +163,42 @@ nav ul li a:hover::after{
     display: block;
 }
 
+/*----------/* Loading animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading {
+    position: relative;
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    left: 50%;
+    margin: -8px 0 0 -8px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 0.6s linear infinite;
+}
+
+/* Lazy loading for images */
+img[data-src] {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+img.lazyloaded {
+    opacity: 1;
+}
+
 /*------------------services-----------------*/
 #services{
     padding: 30px 0;
@@ -160,10 +221,46 @@ nav ul li a:hover::after{
     font-size: 50px;
     margin-bottom: 30px;
 }
-.services-list div h2{
-    font-size: 30px;
+.services-list.work .layer p {
+    font-size: 14px;
+    line-height: 20px;
+    margin: 10px 0 15px;
+}
+
+.tech-stack, .features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 10px 0 15px;
+}
+
+.tech-tag, .feature-tag {
+    background-color: rgba(38, 0, 255, 0.1);
+    color: #2600ff;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 11px;
     font-weight: 500;
-    margin-bottom: 15px;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.feature-tag {
+    background-color: rgba(0, 200, 83, 0.1);
+    color: #00c853;
+}
+
+.feature-tag::before {
+    content: '✓';
+    margin-right: 4px;
+    font-size: 10px;
+}
+
+.work:hover .tech-tag {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
 }
 .services-list div a{
     text-decoration: none;
@@ -172,10 +269,35 @@ nav ul li a:hover::after{
     margin-top: 20px;
     display: inline-block;
 }
-.services-list div:hover{
+.services-list div {
+    transition: all 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.services-list div:hover {
     background: #2600ff;
     transform: translate(-10px);
 }
+/* Image hover effect */
+.work {
+    overflow: hidden;
+    border-radius: 10px;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.work:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.work img {
+    transition: transform 0.5s ease;
+}
+
+.work:hover img {
+    transform: scale(1.05);
+}
+
 /* ---------portofolio---------*/
 #portfolio{
     padding: 50px 0;
@@ -252,6 +374,88 @@ nav ul li a:hover::after{
     background: #2600ff;
 }
 
+/*-----/* Form styles */
+.contact-right form {
+    width: 100%;
+}
+
+form input, form textarea {
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+form input:focus, form textarea:focus {
+    box-shadow: 0 0 10px rgba(38, 0, 255, 0.5);
+}
+
+.btn2 {
+    display: inline-block;
+    background: #2600ff;
+    color: #fff;
+    padding: 14px 50px;
+    font-size: 18px;
+    margin-top: 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn2:hover {
+    background: #1a00b3;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(38, 0, 255, 0.3);
+}
+
+#form-message {
+    display: block;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Scroll to top button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: #2600ff;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.scroll-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-to-top:hover {
+    background: #1a00b3;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
 /*----------------Contact-----------------*/
 .contact-left{
     flex-basis: 35%;
@@ -306,13 +510,31 @@ form .btn2{
     margin-top: 20px;
     cursor: pointer;
 }
-.copyright{
+.copyright {
     width: 100%;
     text-align: center;
     padding: 25px 0;
     background: #262626;
     font-weight: 300;
     margin-top: 20px;
+}
+
+.copyright .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.copyright a {
+    color: #aaa;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.copyright a:hover {
+    color: #2600ff;
+    text-decoration: underline;
 }
 
 
